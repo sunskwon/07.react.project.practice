@@ -3,11 +3,15 @@ import SelectPayment from "../components/SelectPayment";
 import Footer from "../components/Footer";
 import OrderMenus from "../components/SelectedMenus";
 
-function OrderLayout({ selectedItems, setSelectedItems, change, setChange}) {
+function OrderLayout({ here, setHere, selectedItems, setSelectedItems, change, setChange}) {
 
     return (
         <>
-            <Header/>
+            <Header
+                here={here}
+                setHere={setHere}
+                setSelectedItems={setSelectedItems}
+            />
             <OrderMenus
                 selectedItems={selectedItems}
                 setSelectedItems={setSelectedItems}

@@ -14,7 +14,7 @@ function Selected({item, selectedItems, setSelectedItems, change, setChange }) {
             copiedItems[index].quantity -= 1;
             const removedItems = copiedItems.filter(item => item.quantity !== 0);
             setSelectedItems(removedItems);
-            navigate("/");
+            navigate("/menu");
         } else {
             // console.log("minus");
             let copiedItems = selectedItems;

@@ -5,11 +5,15 @@ import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 
-function MenuLayout({ selectedItems, setSelectedItems, change, setChange}) {
+function MenuLayout({ here, setHere, selectedItems, setSelectedItems, change, setChange}) {
 
     return (
         <>
-            <Header/>
+            <Header
+                here={here}
+                setHere={setHere}
+                setSelectedItems={setSelectedItems}
+            />
             <SelectedMenus
                 selectedItems={selectedItems}
                 setSelectedItems={setSelectedItems}

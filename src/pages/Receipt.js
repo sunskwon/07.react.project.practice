@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import OrderedMenus from "../components/OrderedMenus";
 
-function Receipt({selectedItems, setSelectedItems, waitingNum, setWaitingNum}) {
+function Receipt({here, setHere, selectedItems, setSelectedItems, waitingNum, setWaitingNum}) {
     
     const copiedItems = selectedItems;
     const sortedItems = copiedItems.sort(function (a, b) {
@@ -61,6 +61,7 @@ function Receipt({selectedItems, setSelectedItems, waitingNum, setWaitingNum}) {
                 )}
             </div>
             <h3>price : {totalPrice}</h3>
+            <h3>here or to go : {here? "here":"to go"}</h3>
             <h3>wait num : {waitingNum} </h3>
             <button onClick={onClickHandler}>home</button>
         </>
