@@ -4,8 +4,7 @@ import { getBurgerMenus } from "../api/MenuAPI";
 
 import MenuBlock from "../components/MenuBlock";
 
-function BurgerMenus({selectedItems, setSelectedItems, change, setChange}
-) {
+function BurgerMenus({selectedItems, setSelectedItems, change, setChange}) {
 
     const [burgerMenuList, setBurgerMenuList] = useState([]);
 

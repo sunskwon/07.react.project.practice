@@ -1,15 +1,15 @@
-import Selected from "../components/Selected";
+import Selected from "./Selected";
 
-function SelectedMenus({ selectedItems, setSelectedItems, change, setChange }) {
+function OrderMenus({ selectedItems, setSelectedItems, change, setChange }) {
 
     let totalPrice = 0;
 
-    selectedItems.map(
+    {selectedItems.map(
         item => {
             totalPrice += (item.price * item.quantity);
         }
-    )
-
+    )};
+    
     return (
         <>
             <h3>selected menus</h3>
@@ -31,4 +31,4 @@ function SelectedMenus({ selectedItems, setSelectedItems, change, setChange }) {
     );
 }
 
-export default SelectedMenus;
+export default OrderMenus;

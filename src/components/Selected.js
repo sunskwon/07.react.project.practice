@@ -1,29 +1,10 @@
-import { useEffect, useState } from "react";
-
-import { getBurgerMenus } from "../api/MenuAPI";
+import { useNavigate } from "react-router-dom";
 
 function Selected({item, selectedItems, setSelectedItems, change, setChange }) {
 
-    // const [burgerMenus, setBurgerMenus] = useState([]);
-    
-    // useEffect(
-    //     () => {
-    //         setBurgerMenus(getBurgerMenus());
-    //     },
-    //     []
-    //     );
-
     const index = selectedItems.findIndex(function(selected){return selected.menuCode === item.menuCode});
-    
-    // useEffect(
-    //     () => {
-    //         const productIndex = burgerMenus.findIndex(burger => {return burger.menuCode === item.menuCode});
-    //         const string = burgerMenus[productIndex].menuName;
-    //         console.log(productIndex);
-    //         console.log(string);
-    //     },
-    //     [selectedItems]
-    // )
+
+    const navigate = useNavigate();
 
     const onClickMinusButton = () => {
                 
@@ -33,6 +14,7 @@ function Selected({item, selectedItems, setSelectedItems, change, setChange }) {
             copiedItems[index].quantity -= 1;
             const removedItems = copiedItems.filter(item => item.quantity !== 0);
             setSelectedItems(removedItems);
+            navigate("/");
         } else {
             // console.log("minus");
             let copiedItems = selectedItems;

@@ -4,8 +4,7 @@ import { getChickenMenus } from "../api/MenuAPI";
 
 import MenuBlock from "../components/MenuBlock";
 
-function ChickenMenus({selectedItems, setSelectedItems, change, setChange}
-) {
+function ChickenMenus({selectedItems, setSelectedItems, change, setChange}) {
 
     const [chickenMenuList, setChickenMenuList] = useState([]);
 
