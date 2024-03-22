@@ -12,15 +12,19 @@ function MenuBlock({ item, selectedItems, setSelectedItems, change,setChange }) 
             setChange(!change);
             // console.log(selectedItems);
         } else {
-            // console.log("add");
-            const changedItems = [...selectedItems, 
-                {"menuCode": item.menuCode, 
-                 "menuName": item.menuName, 
-                 "price": item.price,
-                 "quantity": 1}];
-            setSelectedItems(changedItems);
-            setChange(!change);
-            // console.log(selectedItems);
+            if (selectedItems.length < 3) {
+                // console.log("add");
+                const changedItems = [...selectedItems, 
+                    {"menuCode": item.menuCode, 
+                     "menuName": item.menuName, 
+                     "price": item.price,
+                     "quantity": 1}];
+                setSelectedItems(changedItems);
+                setChange(!change);
+                // console.log(selectedItems);
+            } else {
+                alert("shopping list is full!");
+            }
         }
     };
 

@@ -27,6 +27,7 @@ function App() {
           <Route path="/" element={<Start
             here={here}
             setHere={setHere}
+            setSelectedItems={setSelectedItems}
           />}>
           </Route>
           <Route path="menu" element={<MenuLayout

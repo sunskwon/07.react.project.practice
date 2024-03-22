@@ -1,9 +1,18 @@
+import { useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 
-function Start({here, setHere}) {
+function Start({here, setHere, setSelectedItems}) {
 
-    const navigate = useNavigate();
+    useEffect(
+        () => {
+            setSelectedItems([]);
+        },
+        []
+    );
     
+    const navigate = useNavigate();
+
     const onClickHere = () => {
         setHere(true);
         navigate("menu");
