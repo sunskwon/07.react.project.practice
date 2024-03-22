@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import style from "./Header.module.css";
+
 function Header({here, setHere}) {
 
     const navigate = useNavigate();
@@ -11,16 +13,39 @@ function Header({here, setHere}) {
     return (
         <>
             <div>
-                <h1>Header!</h1>
-                <div onClick={onClickHome}>
-                    <h3>home</h3>
-                </div>
-                <h5>{here? "here":"to go"}</h5>
-                <div onClick={onClickHere}>
-                    <h3>here</h3>
-                </div>
-                <div onClick={onClickGo}>
-                    <h3>to go</h3>
+                <div className={style.TopBox}></div>
+                <div className={style.HeaderBox}>
+                    <img 
+                        className={style.logo}
+                        src="/images/twoLineCI.png"
+                        width="240px"
+                        height="70px"
+                    />
+                    <div className={style.Blank}></div>
+                    <div 
+                        onClick={onClickHere}
+                        className={style.HereBox}
+                        style={{backgroundColor: here? "rgba(255, 184, 0, 1)":"rgba(255, 255, 255, 1"}}
+                    >
+                        매장
+                    </div>
+                    <div 
+                        onClick={onClickGo}
+                        className={style.HereBox}
+                        style={{backgroundColor: !here? "rgba(255, 184, 0, 1)":"rgba(255, 255, 255, 1"}}
+                    >
+                        포장
+                    </div>
+                    <div 
+                        onClick={onClickHome}
+                        className={style.HomeBox}
+                    >
+                        <img 
+                            src="/images/vector01.png"
+                            className={style.Home}
+                        />
+                        <br/>처음으로
+                    </div>
                 </div>
             </div>
         </>

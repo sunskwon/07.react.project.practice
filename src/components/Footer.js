@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import style from "./Footer.module.css"
+
 function Footer() {
 
     const navigate = useNavigate();
@@ -10,10 +12,18 @@ function Footer() {
 
     return (
         <>
-            <div>
-                <h1>Footer!</h1>
-                <div onClick={onClickHandler}>
-                    <h3>help!</h3>
+            <div className={style.FooterBox}>
+                <div 
+                    onClick={onClickHandler}
+                    className={style.CallBox}
+                >
+                    <img 
+                        src="/images/vector02.png"
+                        width="30px"
+                        height="30px"
+                        classNaem={style.Icon}
+                    />
+                    <br/>직원호출
                 </div>
             </div>
         </>
