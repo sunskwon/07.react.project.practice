@@ -3,6 +3,8 @@ import SelectPayment from "../components/SelectPayment";
 import Footer from "../components/Footer";
 import OrderMenus from "../components/SelectedMenus";
 
+import style from "./Layouts.module.css";
+
 function OrderLayout({ here, setHere, selectedItems, setSelectedItems, change, setChange}) {
 
     return (

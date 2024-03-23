@@ -3,6 +3,8 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import style from "./Layouts.module.css"
+
 function StandardLayout({here, setHere}) {
 
     return (
@@ -11,7 +13,9 @@ function StandardLayout({here, setHere}) {
                 here={here}
                 setHere={setHere}
             />
-            <Outlet/>
+            <Outlet
+                className={style.Back}
+            />
             <Footer/>
         </>
     );

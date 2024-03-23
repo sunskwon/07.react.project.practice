@@ -21,7 +21,7 @@ function Footer() {
                         src="/images/vector02.png"
                         width="30px"
                         height="30px"
-                        classNaem={style.Icon}
+                        className={style.Icon}
                     />
                     <br/>직원호출
                 </div>
