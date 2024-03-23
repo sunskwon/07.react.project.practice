@@ -18,8 +18,6 @@ function Header({here, setHere}) {
                     <img 
                         className={style.logo}
                         src="/images/twoLineCI.png"
-                        width="240px"
-                        height="70px"
                     />
                     <div className={style.Blank}></div>
                     <div 

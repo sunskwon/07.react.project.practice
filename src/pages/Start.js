@@ -17,12 +17,12 @@ function Start({here, setHere, setSelectedItems}) {
 
     const onClickHere = () => {
         setHere(true);
-        navigate("menu");
+        navigate("menu/burgermenu");
     };
 
     const onClickGo = () => {
         setHere(false);
-        navigate("menu");
+        navigate("menu/burgermenu");
     };
 
     return (

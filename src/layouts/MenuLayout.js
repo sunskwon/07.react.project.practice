@@ -1,9 +1,12 @@
+import { Outlet } from "react-router-dom";
+
 import Header from "../components/Header";
 import SelectedMenus from "../components/SelectedMenus";
 import Order from "../components/Order"
 import Navbar from "../components/Navbar";
-import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
+
+import style from "./Layouts.module.css";
 
 function MenuLayout({ here, setHere, selectedItems, setSelectedItems, change, setChange}) {
 
@@ -23,8 +26,12 @@ function MenuLayout({ here, setHere, selectedItems, setSelectedItems, change, se
             <Order
                 selectedItems={selectedItems}
             />
-            <Navbar/>
-            <Outlet/>
+            <div
+                className={style.MenuInner}
+            >
+                <Navbar/>
+                <Outlet/>
+            </div>
             <Footer/>
         </>
     );

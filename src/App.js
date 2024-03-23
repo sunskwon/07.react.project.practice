@@ -8,6 +8,9 @@ import StandardLayout from "./layouts/StandardLayout";
 import Start from "./pages/Start";
 import BurgerMenus from "./pages/BurgerMenus";
 import ChickenMenus from "./pages/ChickenMenus";
+import SetMenus from "./pages/SetMenus";
+import SideMenus from "./pages/SideMenus";
+import DrinkMenus from "./pages/DrinkMenus";
 import Card from "./pages/Card";
 import AppCard from "./pages/AppCard";
 import Receipt from "./pages/Receipt";
@@ -51,6 +54,24 @@ function App() {
               setChange={setChange}
             />}/>
             <Route path="chickenmenu" element={<ChickenMenus
+              selectedItems={selectedItems}
+              setSelectedItems={setSelectedItems}
+              change={change}
+              setChange={setChange}
+            />}/>
+            <Route path="setmenu" element={<SetMenus
+              selectedItems={selectedItems}
+              setSelectedItems={setSelectedItems}
+              change={change}
+              setChange={setChange}
+            />}/>
+            <Route path="sidemenu" element={<SideMenus
+              selectedItems={selectedItems}
+              setSelectedItems={setSelectedItems}
+              change={change}
+              setChange={setChange}
+            />}/>
+            <Route path="drinkmenu" element={<DrinkMenus
               selectedItems={selectedItems}
               setSelectedItems={setSelectedItems}
               change={change}

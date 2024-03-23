@@ -4,6 +4,8 @@ import { getChickenMenus } from "../api/MenuAPI";
 
 import MenuBlock from "../components/MenuBlock";
 
+import style from "./Menus.module.css";
+
 function ChickenMenus({selectedItems, setSelectedItems, change, setChange}) {
 
     const [chickenMenuList, setChickenMenuList] = useState([]);
@@ -17,8 +19,7 @@ function ChickenMenus({selectedItems, setSelectedItems, change, setChange}) {
 
     return (
         <>
-            <h3>menu</h3>
-            <div>
+            <div className={style.Box}>
                 {chickenMenuList.map(
                     product => 
                         <MenuBlock

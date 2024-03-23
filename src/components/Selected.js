@@ -1,10 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import style from "./Selected.module.css";
 
 function Selected({item, selectedItems, setSelectedItems, change, setChange }) {
 
     const index = selectedItems.findIndex(function(selected){return selected.menuCode === item.menuCode});
 
     const navigate = useNavigate();
+
+    const location = useLocation();
 
     const onClickMinusButton = () => {
                 
@@ -14,7 +19,11 @@ function Selected({item, selectedItems, setSelectedItems, change, setChange }) {
             copiedItems[index].quantity -= 1;
             const removedItems = copiedItems.filter(item => item.quantity !== 0);
             setSelectedItems(removedItems);
-            navigate("/menu");
+            if (location.pathname.match("menu")) {
+                navigate(location.pathname);
+            } else {
+                navigate("/menu/burgermenu");
+            }
         } else {
             // console.log("minus");
             let copiedItems = selectedItems;
@@ -35,11 +44,22 @@ function Selected({item, selectedItems, setSelectedItems, change, setChange }) {
 
     return (
         <>
-            <div>
-                <p> menu name : {item.menuName} </p>
-                <button onClick={onClickMinusButton}>-</button>
-                <span>  quantity : {item.quantity} </span>
-                <button onClick={onClickPlusButton}>+</button>
+            <div className={style.Selected}>
+                <img src="/images/temp.jpg" width="90px"/>
+                <br/>{item.menuName}<br/>
+                <div 
+                    onClick={onClickMinusButton}
+                    className={style.Button}
+                >
+                    -
+                </div>
+                수량 : {item.quantity} 
+                <div
+                    onClick={onClickPlusButton}
+                    className={style.Button}
+                >
+                    +
+                </div>
             </div>
         </>
     );

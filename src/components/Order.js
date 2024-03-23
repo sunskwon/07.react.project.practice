@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import style from "./Order.module.css";
+
 function Order({ selectedItems }) {
     
     const navigate = useNavigate();
@@ -11,8 +13,14 @@ function Order({ selectedItems }) {
 
     return (
         <>
-            <div onClick={onClickHander}>
-                <h4>order</h4>
+            <div className={style.Box}>
+                <div className={style.Blank}></div>
+                <div
+                    onClick={onClickHander}
+                    className={style.Button}
+                >
+                    주문하기
+                </div>
             </div>
         </>
     );

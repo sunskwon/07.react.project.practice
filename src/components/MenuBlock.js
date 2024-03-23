@@ -1,3 +1,5 @@
+import style from "./MenuBlock.module.css";
+
 function MenuBlock({ item, selectedItems, setSelectedItems, change,setChange }) {
 
     const onClickHandler = () => {
@@ -30,8 +32,13 @@ function MenuBlock({ item, selectedItems, setSelectedItems, change,setChange }) 
 
     return (
         <>
-            <div onClick={onClickHandler}>
-                {item.menuName}
+            <div
+                onClick={onClickHandler}
+                className={style.Block}
+            >
+                <br/><img src="/images/temp.jpg" width="100px"/>
+                <br/>{item.menuName}<br/>
+                {parseInt(item.price / 1000)},{(item.price % 1000)?item.price % 1000:"000"}원
             </div>
         </>
     );

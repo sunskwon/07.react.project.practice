@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
-import { getBurgerMenus } from "../api/MenuAPI";
+import { getSetMenus } from "../api/MenuAPI";
 
 import MenuBlock from "../components/MenuBlock";
 
 import style from "./Menus.module.css";
 
-function BurgerMenus({selectedItems, setSelectedItems, change, setChange}) {
+function SetMenus({selectedItems, setSelectedItems, change, setChange}) {
 
-    const [burgerMenuList, setBurgerMenuList] = useState([]);
+    const [setMenuList, setSetMenuList] = useState([]);
 
     useEffect(
         () => {
-            setBurgerMenuList(getBurgerMenus());
+            setSetMenuList(getSetMenus());
         },
         []
     )
@@ -20,7 +20,7 @@ function BurgerMenus({selectedItems, setSelectedItems, change, setChange}) {
     return (
         <>
             <div className={style.Box}>
-                {burgerMenuList.map(
+                {setMenuList.map(
                     product => 
                         <MenuBlock
                             key={product.menuCode}
@@ -37,4 +37,4 @@ function BurgerMenus({selectedItems, setSelectedItems, change, setChange}) {
     );
 }
 
-export default BurgerMenus;
+export default SetMenus;
