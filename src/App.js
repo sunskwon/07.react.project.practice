@@ -16,15 +16,20 @@ import AppCard from "./pages/AppCard";
 import Receipt from "./pages/Receipt";
 import Help from "./pages/Help";
 
+import style from './App.module.css';
+
 function App() {
 
   const [here, setHere] = useState(true);
   const [selectedItems, setSelectedItems] = useState([]);
   const [change, setChange] = useState(false);
   const [waitingNum, setWaitingNum] = useState(1);
+  const [isDisplay,setIsDisplay] = useState(false); // 선택 메뉴 개수에 따라 노출되는 메뉴 변경 Boolean
 
   return (
     <>
+    <div className={style.App}>
+      <div className={style.kiosk}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Start
@@ -40,42 +45,56 @@ function App() {
             setSelectedItems={setSelectedItems}
             change={change}
             setChange={setChange}
+            isDisplay={isDisplay}
+            setIsDisplay={setIsDisplay}
           />}>
             <Route index element={<BurgerMenus
               selectedItems={selectedItems}
               setSelectedItems={setSelectedItems}
               change={change}
               setChange={setChange}
+              isDisplay={isDisplay}
+              setIsDisplay={setIsDisplay}
             />}/>
             <Route path="burgermenu" element={<BurgerMenus
               selectedItems={selectedItems}
               setSelectedItems={setSelectedItems}
               change={change}
               setChange={setChange}
+              isDisplay={isDisplay}
+              setIsDisplay={setIsDisplay}
             />}/>
             <Route path="chickenmenu" element={<ChickenMenus
               selectedItems={selectedItems}
               setSelectedItems={setSelectedItems}
               change={change}
               setChange={setChange}
+              isDisplay={isDisplay}
+              setIsDisplay={setIsDisplay}
             />}/>
             <Route path="setmenu" element={<SetMenus
               selectedItems={selectedItems}
               setSelectedItems={setSelectedItems}
               change={change}
               setChange={setChange}
+              isDisplay={isDisplay}
+              setIsDisplay={setIsDisplay}
             />}/>
             <Route path="sidemenu" element={<SideMenus
               selectedItems={selectedItems}
               setSelectedItems={setSelectedItems}
               change={change}
               setChange={setChange}
+              isDisplay={isDisplay}
+              setIsDisplay={setIsDisplay}
             />}/>
             <Route path="drinkmenu" element={<DrinkMenus
               selectedItems={selectedItems}
               setSelectedItems={setSelectedItems}
               change={change}
               setChange={setChange}
+              isDisplay={isDisplay}
+              setIsDisplay={setIsDisplay}
             />}/>
           </Route>
           <Route path="order" element={<OrderLayout
@@ -85,6 +104,8 @@ function App() {
             setSelectedItems={setSelectedItems}
             change={change}
             setChange={setChange}
+            isDisplay={isDisplay}
+            setIsDisplay={setIsDisplay}
           />}>
             <Route index element={<OrderLayout
               here={here}
@@ -93,6 +114,8 @@ function App() {
               setSelectedItems={setSelectedItems}
               change={change}
               setChange={setChange}
+              isDisplay={isDisplay}
+              setIsDisplay={setIsDisplay}
             />}/>
           </Route>
           <Route path="pay" element={<StandardLayout
@@ -116,12 +139,19 @@ function App() {
               setWaitingNum={setWaitingNum}
             />}/>
           </Route>
-          <Route path="help" element={<Help
-            setSelectedItems={setSelectedItems}
+          <Route path='help' element={<StandardLayout
+            here={here}
+            setHere={setHere}
           />}>
+              <Route index element={<Help
+                setSelectedItems={setSelectedItems}
+              />}>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
+      </div>
+      </div>
     </>
   );
 }
